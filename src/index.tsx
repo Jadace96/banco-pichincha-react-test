@@ -1,14 +1,9 @@
 // vendors
 import ReactDOM from "react-dom/client";
-import { Suspense, StrictMode } from "react";
-import { SWRConfig } from "swr";
-import { BrowserRouter } from "react-router-dom";
+import { StrictMode } from "react";
 
 // reports
 import reportWebVitals from "./reportWebVitals";
-
-// configs
-import { apiFetcher } from "configs/apiFetcher.config";
 
 // components
 import App from "./App";
@@ -22,13 +17,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
 	<StrictMode>
-		<Suspense fallback={<div>Loading App...</div>}>
-			<SWRConfig value={{ fetcher: apiFetcher }}>
-				<BrowserRouter>
-					<App />
-				</BrowserRouter>
-			</SWRConfig>
-		</Suspense>
+		<App />
 	</StrictMode>
 );
 
