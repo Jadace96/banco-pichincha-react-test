@@ -5,5 +5,12 @@ type TProps = React.InputHTMLAttributes<HTMLInputElement>;
 import styles from "./Searcher.module.css";
 
 export const Searcher = (props: TProps) => {
-	return <input className={styles.searchInput} type="search" {...props} />;
+	return (
+		<input
+			className={styles.searchInput}
+			placeholder="Search..."
+			{...props}
+			type="search"
+		/>
+	);
 };

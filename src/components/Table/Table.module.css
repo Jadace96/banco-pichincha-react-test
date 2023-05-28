@@ -34,5 +34,6 @@
 
 .tableRowItems {
 	cursor: auto;
+	position: relative;
 	text-align: center;
 }

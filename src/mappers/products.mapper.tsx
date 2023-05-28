@@ -1,5 +1,5 @@
 // components
-import { Logo } from "components";
+import { Logo, ThreeDotsMenu } from "components";
 
 // utils
 import { capitalizeFirstLetters } from "utils";
@@ -14,5 +14,6 @@ export const mapProductsToTableRows = (products: TProduct[]) => {
 		description: product.description,
 		date_release: product.date_release.toLocaleDateString(),
 		date_revision: product.date_revision.toLocaleDateString(),
+		threeDotsMenu: <ThreeDotsMenu />,
 	}));
 };
