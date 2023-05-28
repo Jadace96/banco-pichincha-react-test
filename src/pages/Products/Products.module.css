@@ -2,12 +2,21 @@
 	max-width: 100%;
 }
 
+.headerContainer {
+	display: flex;
+	margin: 10px 20px;
+	align-items: center;
+	justify-content: space-between;
+	/* background-color: aqua; */
+}
+
 @media (min-width: 1024px) {
 	.pageContainer {
-		display: flex;
-		margin: 100px auto;
 		max-width: 1200px;
-		justify-content: center;
+		margin: 100px auto;
 	}
 
+	.headerContainer {
+		margin-inline: 0;
+	}
 }

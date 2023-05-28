@@ -1,16 +1,16 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+			'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+			sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	background-color: var(--aqua-haze-color);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+			monospace;
 }
 
 ::-webkit-scrollbar {
@@ -27,14 +27,16 @@ code {
 	background-color: var(--mid-gray-color);
 	border-radius: 15px;
 }
+
 :root {
+	--downriver-color: #0E2556;
 	--alizarin-crimson-color: #DA2525;
+	--mid-gray-color: #6E6E73;
 	--aqua-haze-color: #F4F6F9;
 	--blue-haze-color: #C0C7D9;
 	--manatee-color: #929296;
 	--energy-yellow-color: #F9DE4B;
-		--downriver-color: #0E2556;
 	--tuna-color: #37383B;
 	--wild-sand-color: #F5F5F5;
-		--mid-gray-color: #6E6E73;
+
 }

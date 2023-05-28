@@ -1,6 +1,7 @@
 .wrapper {
-	background-color: #FFFFFF;
 	padding: 25px;
+	border-radius: 3px;
+	background-color: #ffffff;
 }
 
 .tableContainer {

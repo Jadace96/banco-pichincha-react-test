@@ -1,4 +1,4 @@
 // vendors
-import { lazy } from 'react';
+import { lazy } from "react";
 
-export const PageNotFound = lazy(() => import('./404.page'));
+export const PageNotFound = lazy(() => import("./404.page"));

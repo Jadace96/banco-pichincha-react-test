@@ -1,5 +1,5 @@
 // components
-import { Table, Tooltip } from "components";
+import { Button, Searcher, Table, Tooltip } from "components";
 
 // mappers
 import { mapProductsToTableRows } from "mappers/products.mapper";
@@ -157,6 +157,10 @@ const columnsData = [
 export default function ProductsPage() {
 	return (
 		<div className={styles.pageContainer}>
+			<div className={styles.headerContainer}>
+				<Searcher />
+				<Button> Agregar</Button>
+			</div>
 			<Table
 				colums={columnsData}
 				rows={mapProductsToTableRows(mockTableData)}
