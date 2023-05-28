@@ -1,0 +1,13 @@
+.pageContainer {
+	max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+	.pageContainer {
+		display: flex;
+		margin: 100px auto;
+		max-width: 1200px;
+		justify-content: center;
+	}
+
+}

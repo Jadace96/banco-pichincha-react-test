@@ -1,0 +1,17 @@
+.tooltipWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tooltipContainer {
+	width: 26px;
+	cursor: pointer;
+	color: #FFFFFF;
+	margin-top: 4px;
+	padding: 0 0 5px;
+	margin-left: 10px;
+	border-radius: 100%;
+	transform: scale(0.7);
+	background-color: var(--mid-gray-color);
+}

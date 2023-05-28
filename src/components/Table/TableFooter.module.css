@@ -1,0 +1,33 @@
+.tableFooter {
+	display: flex;
+	align-items: center;
+	padding: 15px 0;
+	justify-content: space-between;
+}
+
+.buttonsContainer {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.button {
+	border: none;
+	cursor: pointer;
+	display: flex;
+	font-weight: bold;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 10px 14px;
+	/* border-radius: 5px; */
+	background-color: transparent;
+}
+
+.button img {
+	max-width: 15px;
+}
+
+.buttonDisabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}

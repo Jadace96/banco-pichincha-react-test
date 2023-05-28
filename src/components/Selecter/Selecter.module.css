@@ -1,0 +1,5 @@
+.selecter {
+	padding: 5px;
+	border-radius: 5px;
+	border: 2px solid var(--blue-haze-color);
+}
