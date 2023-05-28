@@ -1,36 +1,21 @@
 // vendors
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
+
+// hooks
+import { useOutsideClick } from "hooks";
 
 // styles
 import styles from "./ThreeDotsMenu.module.css";
 
 export const ThreeDotsMenu: React.FC = () => {
 	const [showMenu, setShowMenu] = useState(false);
-	const menuRef = useRef<HTMLDivElement>(null);
-
-	const handleClick = () => {
-		setShowMenu(!showMenu);
-	};
-
-	const handleOutsideClick = (event: Event) => {
-		if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-			setShowMenu(false);
-		}
-	};
-
-	useEffect(() => {
-		document.addEventListener("click", handleOutsideClick);
-
-		return () => {
-			document.removeEventListener("click", handleOutsideClick);
-		};
-	}, []);
+	const menuRef = useOutsideClick<HTMLDivElement>(() => setShowMenu(false));
 
 	return (
 		<div className={styles.dotsMenu} ref={menuRef}>
 			<div
 				className={`${styles.dotsIcon} ${showMenu ? styles.active : ""}`}
-				onClick={handleClick}
+				onClick={() => setShowMenu(!showMenu)}
 			>
 				<span className={styles.dotIcon}></span>
 				<span className={styles.dotIcon}></span>

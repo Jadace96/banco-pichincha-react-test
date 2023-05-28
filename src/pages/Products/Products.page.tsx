@@ -16,6 +16,7 @@ const columnsData = [
 	<Tooltip label="Descripción" />,
 	<Tooltip label="Fecha de liberación" />,
 	<Tooltip label="Fecha de reestructuración" />,
+	"",
 ];
 
 export default function ProductsPage() {
