@@ -1,9 +1,6 @@
 // vendors
 import { ReactNode } from "react";
 
-// hooks
-import { useTable } from "hooks";
-
 // components
 import { TableFooter } from "./TableFooter.component";
 
@@ -17,18 +14,22 @@ type TPops = {
 	rows: TObjectKeyString[];
 	initialRowsPerPage?: number;
 	colums?: ReactNode[];
+	totalPages: number;
+	currentPage: number;
+	rowsPerPage: number;
+	setCurrentPage: (page: number) => void;
+	setRowsPerPage: (rowsPerPage: number) => void;
 };
 
-export const Table = ({ rows = [], colums = [] }: TPops) => {
-	const {
-		totalPages,
-		currentPage,
-		rowsPerPage,
-		setRowsPerPage,
-		setCurrentPage,
-		currentPageData,
-	} = useTable(rows);
-
+export const Table = ({
+	rows = [],
+	colums = [],
+	totalPages,
+	currentPage,
+	rowsPerPage,
+	setRowsPerPage,
+	setCurrentPage,
+}: TPops) => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.tableContainer}>
@@ -43,7 +44,7 @@ export const Table = ({ rows = [], colums = [] }: TPops) => {
 						</tr>
 					</thead>
 					<tbody>
-						{currentPageData.map((data: TObjectKeyString) => (
+						{rows.map((data: TObjectKeyString) => (
 							<tr key={Math.random()} className={styles.tableRowItems}>
 								{Object.values(data).map((value) => (
 									<td key={Math.random()} className={styles.tableCell}>
@@ -56,12 +57,12 @@ export const Table = ({ rows = [], colums = [] }: TPops) => {
 				</table>
 			</div>
 			<TableFooter
+				results={rows?.length}
 				totalPages={totalPages}
 				currentPage={currentPage}
 				rowsPerPage={rowsPerPage}
 				setRowsPerPage={setRowsPerPage}
 				setCurrentPage={setCurrentPage}
-				results={currentPageData?.length}
 			/>
 		</div>
 	);

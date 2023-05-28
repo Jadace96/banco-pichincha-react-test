@@ -4,18 +4,25 @@ import { useState, useEffect, useMemo } from "react";
 // utils
 import { getTotalPages, getPaginatedData } from "utils";
 
-// types
-import { TObjectKeyString } from "types";
+// mocks
+import { mockProducts } from "mocks/mockTableData";
 
-export const useTable = (data: TObjectKeyString[]) => {
+// types
+import { TProduct } from "types";
+
+const data: TProduct[] = mockProducts;
+
+export const useProductsTable = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [rowsPerPage, setRowsPerPage] = useState(5);
-	const [currentPageData, setCurrentPageData] = useState<TObjectKeyString[]>(
-		[]
-	);
+	const [currentPageData, setCurrentPageData] = useState<TProduct[]>([]);
 
 	useEffect(() => {
-		const pageData = getPaginatedData({ data, currentPage, rowsPerPage });
+		const pageData = getPaginatedData<TProduct>({
+			data,
+			currentPage,
+			rowsPerPage,
+		});
 
 		setCurrentPageData(pageData);
 	}, [data, rowsPerPage, currentPage]);

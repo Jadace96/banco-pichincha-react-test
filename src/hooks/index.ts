@@ -1,1 +1,1 @@
-export { useTable } from "./useTable.hook";
+export { useProductsTable } from "./useProductsTable.hook";
