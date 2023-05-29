@@ -1,3 +1,6 @@
+// vendors
+import { useNavigate } from "react-router-dom";
+
 // components
 import { Button, Searcher, Table, Tooltip } from "components";
 
@@ -6,6 +9,9 @@ import { mapProductsToTableRows } from "mappers/products.mapper";
 
 // hooks
 import { useProductsTable } from "hooks";
+
+// constants
+import { PATHS } from "consts/paths.const";
 
 // styles
 import styles from "./Products.module.css";
@@ -20,13 +26,14 @@ const columnsData = [
 ];
 
 export default function ProductsPage() {
+	const navigate = useNavigate();
 	const { currentPageData, ...rest } = useProductsTable();
 
 	return (
 		<div className={styles.pageContainer}>
 			<div className={styles.headerContainer}>
 				<Searcher />
-				<Button> Agregar </Button>
+				<Button onClick={() => navigate(PATHS.ADD_PRODUCT)}> Agregar </Button>
 			</div>
 			<Table
 				{...rest}

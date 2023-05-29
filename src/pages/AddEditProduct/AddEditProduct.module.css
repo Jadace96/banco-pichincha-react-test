@@ -1,0 +1,9 @@
+.addEditProductContainer {
+	max-width: 780px;
+}
+
+@media (min-width: 720px) {
+	.addEditProductContainer {
+		margin: 70px auto 0;
+	}
+}
