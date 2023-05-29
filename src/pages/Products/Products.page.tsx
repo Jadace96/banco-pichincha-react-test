@@ -31,9 +31,9 @@ const columnsData = [
 
 export default function ProductsPage() {
   const navigate = useNavigate();
-  const { products, isFetchingProducts } = useProduct();
+  const { products, isFetchingProducts, createProductMutation } = useProduct();
   // const { currentPageData, ...rest } = useTable<TProduct>(products);
-  const { currentPageData, ...rest } = useTable<TProduct>(mockProducts);
+  const { currentPageData, ...rest } = useTable<TProduct>(products);
 
   return (
     <div className={styles.pageContainer}>

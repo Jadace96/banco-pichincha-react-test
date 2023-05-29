@@ -2,6 +2,9 @@
 import { useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+// hooks
+import { useProduct } from "hooks";
+
 // utils
 import { formatDate } from "utils";
 
@@ -15,12 +18,12 @@ import { PATHS } from "consts/paths.const";
 import styles from "./AddEditProduct.module.css";
 
 export default function AddEditProduct() {
-  const { state } = useLocation();
   const navigate = useNavigate();
+  const { state } = useLocation();
+
+  const { createProductMutation } = useProduct();
 
   const isEditPage = location.pathname === PATHS.EDIT_PRODUCT;
-
-  console.log(state?.productData);
 
   const productFormInitialValues = useMemo(
     () =>
@@ -42,7 +45,10 @@ export default function AddEditProduct() {
       <h1 className={styles.pageTitle}>
         {isEditPage ? "Formulario de Edicion" : "Formulario de Registro"}
       </h1>
-      <ProductForm onSubmitForm={console.log} initialValues={productFormInitialValues} />
+      <ProductForm
+        onSubmitForm={(data: any) => createProductMutation.mutate(data)}
+        initialValues={productFormInitialValues}
+      />
     </div>
   );
 }

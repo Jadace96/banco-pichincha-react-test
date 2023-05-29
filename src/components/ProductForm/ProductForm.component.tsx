@@ -27,7 +27,6 @@ type TProps = {
 };
 
 export const ProductForm = ({ initialValues, onSubmitForm }: TProps) => {
-  console.log({ initialValues });
   const {
     setValue,
     register,
