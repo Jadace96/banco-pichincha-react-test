@@ -25,7 +25,7 @@ export const ProductForm = () => {
     register,
     handleSubmit,
     formState: { errors, ...rest },
-  } = useForm<ProductFormData>();
+  } = useForm<ProductFormData>({ mode: "onChange" });
 
   console.log({ errors, ...rest, values: getValues() });
 
@@ -33,10 +33,10 @@ export const ProductForm = () => {
     console.log(data);
   };
 
-  const onReleaseDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedDate = event.target.value;
-
-    const nextYear = new Date(selectedDate);
+  const onReleaseDateChange = ({
+    target,
+  }: React.ChangeEvent<HTMLInputElement>) => {
+    const nextYear = new Date(target.value);
     nextYear.setFullYear(nextYear.getFullYear() + 1);
 
     setValue("date_revision", nextYear.toISOString().split("T")[0]);
@@ -189,7 +189,7 @@ export const ProductForm = () => {
         <Button type="reset" mode="secondary">
           Reiniciar
         </Button>
-        <Button type="submit" disabled={!Object.keys(errors).length}>
+        <Button type="submit" disabled={Object.keys(errors).length > 0}>
           Enviar
         </Button>
       </div>
