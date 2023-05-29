@@ -20,26 +20,24 @@ type ProductFormData = {
 
 export const ProductForm = () => {
   const {
-    getValues,
     setValue,
     register,
     handleSubmit,
-    formState: { errors, ...rest },
+    formState: { errors, isDirty },
   } = useForm<ProductFormData>({ mode: "onChange" });
-
-  console.log({ errors, ...rest, values: getValues() });
 
   const onSubmit = (data: ProductFormData) => {
     console.log(data);
   };
 
-  const onReleaseDateChange = ({
-    target,
-  }: React.ChangeEvent<HTMLInputElement>) => {
+  const onReleaseDateChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    console.log({ target });
     const nextYear = new Date(target.value);
     nextYear.setFullYear(nextYear.getFullYear() + 1);
 
-    setValue("date_revision", nextYear.toISOString().split("T")[0]);
+    const newDateRevision = target.value ? nextYear?.toISOString()?.split("T")[0] : "";
+
+    setValue("date_revision", newDateRevision);
   };
 
   return (
@@ -63,18 +61,14 @@ export const ProductForm = () => {
             },
             pattern: /^[A-Za-z0-9]+$/,
           })}
-          className={`${styles.formControl} ${
-            errors.id ? styles.errorInput : ""
-          }`}
+          className={`${styles.formControl} ${errors.id ? styles.errorInput : ""}`}
         />
-        {errors.id && (
-          <span className={styles.errorMessage}>{errors.id.message}</span>
-        )}
+        {errors.id && <span className={styles.errorMessage}>{errors.id.message}</span>}
       </div>
 
       <div className={styles.formGroup}>
         <label className={styles.formFieldLabel} htmlFor="name">
-          Name
+          Nombre
         </label>
         <input
           type="text"
@@ -90,18 +84,14 @@ export const ProductForm = () => {
               message: "Máximo 100 caracteres!",
             },
           })}
-          className={`${styles.formControl} ${
-            errors.name ? styles.errorInput : ""
-          }`}
+          className={`${styles.formControl} ${errors.name ? styles.errorInput : ""}`}
         />
-        {errors.name && (
-          <span className={styles.errorMessage}>{errors.name.message}</span>
-        )}
+        {errors.name && <span className={styles.errorMessage}>{errors.name.message}</span>}
       </div>
 
       <div className={styles.formGroup}>
         <label className={styles.formFieldLabel} htmlFor="description">
-          Description
+          Descripción
         </label>
         <input
           type="text"
@@ -117,15 +107,9 @@ export const ProductForm = () => {
               message: "Máximo 200 caracteres!",
             },
           })}
-          className={`${styles.formControl} ${
-            errors.description ? styles.errorInput : ""
-          }`}
+          className={`${styles.formControl} ${errors.description ? styles.errorInput : ""}`}
         />
-        {errors.description && (
-          <span className={styles.errorMessage}>
-            {errors.description.message}
-          </span>
-        )}
+        {errors.description && <span className={styles.errorMessage}>{errors.description.message}</span>}
       </div>
 
       <div className={styles.formGroup}>
@@ -133,21 +117,17 @@ export const ProductForm = () => {
           Logo
         </label>
         <input
-          type="file"
+          type="text"
           id="logo"
           {...register("logo", { required: "Este campo es requerido!" })}
-          className={`${styles.formControl} ${
-            errors.logo ? styles.errorInput : ""
-          }`}
+          className={`${styles.formControl} ${errors.logo ? styles.errorInput : ""}`}
         />
-        {errors.logo && (
-          <span className={styles.errorMessage}>{errors.logo.message}</span>
-        )}
+        {errors.logo && <span className={styles.errorMessage}>{errors.logo.message}</span>}
       </div>
 
       <div className={styles.formGroup}>
         <label className={styles.formFieldLabel} htmlFor="date_release">
-          Release Date
+          Fecha de Liberación
         </label>
         <input
           type="date"
@@ -155,41 +135,28 @@ export const ProductForm = () => {
           {...register("date_release", {
             required: "Este campo es requerido!",
             validate: (value) => {
-              const selectedDate = new Date(value);
-              const today = new Date();
+              const today = new Date().toISOString().substring(0, 10);
+              const selectedDate = new Date(value).toISOString().substring(0, 10);
 
-              return selectedDate < today
-                ? "La fecha no puede ser inferior a la de hoy!"
-                : true;
+              return selectedDate < today ? "La fecha no puede ser inferior a la de hoy!" : true;
             },
+            onChange: onReleaseDateChange,
           })}
-          onChange={onReleaseDateChange}
-          className={`${styles.formControl} ${
-            errors.date_release ? styles.errorInput : ""
-          }`}
+          className={`${styles.formControl} ${errors.date_release ? styles.errorInput : ""}`}
         />
-        {errors.date_release && (
-          <span className={styles.errorMessage}>
-            {errors.date_release.message}
-          </span>
-        )}
+        {errors.date_release && <span className={styles.errorMessage}>{errors.date_release.message}</span>}
       </div>
 
       <div className={`${styles.formGroup} ${styles.disabled}`}>
         <label className={styles.formFieldLabel}>Fecha de Revisión</label>
-        <input
-          disabled
-          type="date"
-          className={styles.formControl}
-          {...register("date_revision", { required: true })}
-        />
+        <input disabled type="date" className={styles.formControl} {...register("date_revision", { required: true })} />
       </div>
 
       <div className={styles.formButtonsContainer}>
         <Button type="reset" mode="secondary">
           Reiniciar
         </Button>
-        <Button type="submit" disabled={Object.keys(errors).length > 0}>
+        <Button type="submit" disabled={!isDirty || Object.keys(errors).length > 0}>
           Enviar
         </Button>
       </div>
