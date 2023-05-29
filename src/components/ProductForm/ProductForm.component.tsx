@@ -17,15 +17,17 @@ type ProductFormData = {
   name: string;
   description: string;
   logo: FileList;
-  date_release: string;
-  date_revision: string;
+  date_release: string; // dd/mm/yyyy
+  date_revision: string; // dd/mm/yyyy
 };
 
 type TProps = {
+  onSubmitForm: (formValues: ProductFormData) => void;
   initialValues?: ProductFormData;
 };
 
-export const ProductForm = ({ initialValues }: TProps) => {
+export const ProductForm = ({ initialValues, onSubmitForm }: TProps) => {
+  console.log({ initialValues });
   const {
     setValue,
     register,
@@ -33,9 +35,7 @@ export const ProductForm = ({ initialValues }: TProps) => {
     formState: { errors, isDirty },
   } = useForm<ProductFormData>({ mode: "onChange", defaultValues: { ...initialValues } });
 
-  const onSubmit = (data: ProductFormData) => {
-    console.log(data);
-  };
+  const onSubmit = (formValues: ProductFormData) => onSubmitForm(formValues);
 
   const onReleaseDateChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     const nextYear = new Date(target.value);
@@ -64,7 +64,7 @@ export const ProductForm = ({ initialValues }: TProps) => {
             maxLength: {
               value: 10,
               message: "Máximo 10 caracteres!",
-            }
+            },
           })}
           className={`${styles.formControl} ${errors.id ? styles.errorInput : ""}`}
         />
@@ -114,7 +114,9 @@ export const ProductForm = ({ initialValues }: TProps) => {
           })}
           className={`${styles.formControl} ${errors.description ? styles.errorInput : ""}`}
         />
-        {errors.description && <span className={styles.errorMessage}>{errors.description.message}</span>}
+        {errors.description && (
+          <span className={styles.errorMessage}>{errors.description.message}</span>
+        )}
       </div>
 
       <div className={styles.formGroup}>
@@ -149,12 +151,19 @@ export const ProductForm = ({ initialValues }: TProps) => {
           })}
           className={`${styles.formControl} ${errors.date_release ? styles.errorInput : ""}`}
         />
-        {errors.date_release && <span className={styles.errorMessage}>{errors.date_release.message}</span>}
+        {errors.date_release && (
+          <span className={styles.errorMessage}>{errors.date_release.message}</span>
+        )}
       </div>
 
       <div className={`${styles.formGroup} ${styles.disabled}`}>
         <label className={styles.formFieldLabel}>Fecha de Revisión</label>
-        <input disabled type="date" className={styles.formControl} {...register("date_revision", { required: true })} />
+        <input
+          disabled
+          type="date"
+          className={styles.formControl}
+          {...register("date_revision", { required: true })}
+        />
       </div>
 
       <div className={styles.formButtonsContainer}>

@@ -19,7 +19,10 @@ export const ThreeDotsMenu = ({ onClickEdit, onClickDelete }: TProps) => {
 
   return (
     <div className={styles.dotsMenu} ref={menuRef}>
-      <div className={`${styles.dotsIcon} ${showMenu ? styles.active : ""}`} onClick={() => setShowMenu(!showMenu)}>
+      <div
+        className={`${styles.dotsIcon} ${showMenu ? styles.active : ""}`}
+        onClick={() => setShowMenu(!showMenu)}
+      >
         <span className={styles.dotIcon}></span>
         <span className={styles.dotIcon}></span>
         <span className={styles.dotIcon}></span>

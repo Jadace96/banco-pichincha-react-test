@@ -1,5 +1,9 @@
 // vendors
+import { useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+
+// utils
+import { formatDate } from "utils";
 
 // components
 import { ProductForm } from "components";
@@ -9,31 +13,36 @@ import { PATHS } from "consts/paths.const";
 
 // styles
 import styles from "./AddEditProduct.module.css";
-import { formatDate } from "utils";
-
-const pageTitle = {
-  [PATHS.EDIT_PRODUCT]: "Formulario de Edicion",
-  [PATHS.ADD_PRODUCT]: "Formulario de Registro",
-};
 
 export default function AddEditProduct() {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  const productFormInitialValues =
-    {
-      ...state?.productData,
-      date_release: formatDate(state?.productData.date_release),
-      date_revision: formatDate(state?.productData.date_revision),
-    } || {};
+  const isEditPage = location.pathname === PATHS.EDIT_PRODUCT;
+
+  console.log(state?.productData);
+
+  const productFormInitialValues = useMemo(
+    () =>
+      state?.productData
+        ? {
+            ...state?.productData,
+            date_release: formatDate(new Date(state?.productData.date_release)),
+            date_revision: formatDate(new Date(state?.productData.date_revision)),
+          }
+        : {},
+    [state?.productData]
+  );
 
   return (
     <div className={styles.addEditProductContainer}>
       <button onClick={() => navigate(-1)} className={styles.goBackButton}>
         {"< Volver"}
       </button>
-      <h1 className={styles.pageTitle}>{pageTitle[location.pathname]}</h1>
-      <ProductForm initialValues={productFormInitialValues} />
+      <h1 className={styles.pageTitle}>
+        {isEditPage ? "Formulario de Edicion" : "Formulario de Registro"}
+      </h1>
+      <ProductForm onSubmitForm={console.log} initialValues={productFormInitialValues} />
     </div>
   );
 }

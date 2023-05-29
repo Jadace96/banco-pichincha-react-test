@@ -14,12 +14,7 @@ const modesStyles = {
   secondary: styles.secondaryButton,
 };
 
-export const Button = ({
-  children,
-  className = "",
-  mode = "primary",
-  ...rest
-}: TProps) => {
+export const Button = ({ children, className = "", mode = "primary", ...rest }: TProps) => {
   return (
     <button
       className={`${styles.buttonContainer} ${className} ${

@@ -2,12 +2,14 @@
 	"root": true,
 	"extends": [
 		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
 	],
 	"parser": "@typescript-eslint/parser",
 	"plugins": [
 		"@typescript-eslint",
-		"react-hooks"
+    "react-hooks",
+    "@tanstack/query"
 	],
 	"ignorePatterns": [
 		"node_modules/",

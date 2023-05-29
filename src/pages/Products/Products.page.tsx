@@ -8,13 +8,17 @@ import { Button, Searcher, Table, Tooltip } from "components";
 import { mapProductsToTableRows } from "mappers/products.mapper";
 
 // hooks
-import { useProductsTable } from "hooks";
+import { useProduct, useTable } from "hooks";
 
 // constants
 import { PATHS } from "consts/paths.const";
 
+// types
+import { TProduct } from "types";
+
 // styles
 import styles from "./Products.module.css";
+import { mockProducts } from "mocks/mockTableData";
 
 const columnsData = [
   "Logo",
@@ -27,7 +31,9 @@ const columnsData = [
 
 export default function ProductsPage() {
   const navigate = useNavigate();
-  const { currentPageData, ...rest } = useProductsTable();
+  const { products, isFetchingProducts } = useProduct();
+  // const { currentPageData, ...rest } = useTable<TProduct>(products);
+  const { currentPageData, ...rest } = useTable<TProduct>(mockProducts);
 
   return (
     <div className={styles.pageContainer}>
@@ -35,20 +41,24 @@ export default function ProductsPage() {
         <Searcher />
         <Button onClick={() => navigate(PATHS.ADD_PRODUCT)}> Agregar </Button>
       </div>
-      <Table
-        {...rest}
-        colums={columnsData}
-        rows={mapProductsToTableRows({
-          products: currentPageData,
-          onClickEditProduct: (productToEdit) =>
-            navigate(PATHS.EDIT_PRODUCT, {
-              state: {
-                productData: productToEdit,
-              },
-            }),
-          onClickDeleteProduct: () => {},
-        })}
-      />{" "}
+      {isFetchingProducts ? (
+        <div>Loading Products...</div>
+      ) : (
+        <Table
+          {...rest}
+          colums={columnsData}
+          rows={mapProductsToTableRows({
+            products: currentPageData,
+            onClickEditProduct: (productToEdit) =>
+              navigate(PATHS.EDIT_PRODUCT, {
+                state: {
+                  productData: productToEdit,
+                },
+              }),
+            onClickDeleteProduct: () => {},
+          })}
+        />
+      )}
     </div>
   );
 }

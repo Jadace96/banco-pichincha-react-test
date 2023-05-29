@@ -1,5 +1,5 @@
 export * from "./product.types";
 
 export type TObjectKeyString = {
-	[key: string]: unknown;
+  [key: string]: unknown;
 };
