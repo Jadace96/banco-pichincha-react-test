@@ -40,7 +40,13 @@ export default function ProductsPage() {
         colums={columnsData}
         rows={mapProductsToTableRows({
           products: currentPageData,
-          threeDotsMenuProps: { onClickEdit: () => navigate(PATHS.EDIT_PRODUCT), onClickDelete: () => {} },
+          onClickEditProduct: (productToEdit) =>
+            navigate(PATHS.EDIT_PRODUCT, {
+              state: {
+                productData: productToEdit,
+              },
+            }),
+          onClickDeleteProduct: () => {},
         })}
       />{" "}
     </div>

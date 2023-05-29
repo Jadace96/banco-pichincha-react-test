@@ -1,7 +1,7 @@
 export const mockProducts = [
   {
     logo: "https://www.visa.com.ec/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-signature-400x225.jpg",
-    name: "Tarjetas de Credito Signature",
+    name: "Tarjetas de Credito Signature 1",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -9,7 +9,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Cla%CC%81sica_%28Azul%29_180910.jpg/20946586-edcc-7b33-dc17-8d2deb432aab?t=1558124363833",
-    name: "Tarjetas de Credito Clasica",
+    name: "Tarjetas de Credito Clasica 2",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -17,7 +17,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Gold_180910.jpg/6549183f-6e0c-141e-c298-3e08734cdd95?t=1558124363880",
-    name: "Tarjetas de Credito Gold",
+    name: "Tarjetas de Credito Gold 3",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -25,7 +25,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Platino-banco-pichincha.png/39dcbbaf-34ff-288f-c736-2316b05cab92?t=1634856749760",
-    name: "Tarjetas de Credito Platino",
+    name: "Tarjetas de Credito Platino 4",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -33,7 +33,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Infinite-banco-pichincha.png/2927556c-a16f-b2fe-def4-10c8eebb6eca?t=1634857084377",
-    name: "Tarjetas de Credito Infinite",
+    name: "Tarjetas de Credito Infinite 5",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -41,7 +41,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.visa.com.ec/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-signature-400x225.jpg",
-    name: "Tarjetas de Credito Signature",
+    name: "Tarjetas de Credito Signature 6",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -49,7 +49,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Cla%CC%81sica_%28Azul%29_180910.jpg/20946586-edcc-7b33-dc17-8d2deb432aab?t=1558124363833",
-    name: "Tarjetas de Credito Clasica",
+    name: "Tarjetas de Credito Clasica 7",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -57,7 +57,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Gold_180910.jpg/6549183f-6e0c-141e-c298-3e08734cdd95?t=1558124363880",
-    name: "Tarjetas de Credito Gold",
+    name: "Tarjetas de Credito Gold 8",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -65,7 +65,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Platino-banco-pichincha.png/39dcbbaf-34ff-288f-c736-2316b05cab92?t=1634856749760",
-    name: "Tarjetas de Credito Platino",
+    name: "Tarjetas de Credito Platino 9",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -73,7 +73,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Infinite-banco-pichincha.png/2927556c-a16f-b2fe-def4-10c8eebb6eca?t=1634857084377",
-    name: "Tarjetas de Credito Infinite",
+    name: "Tarjetas de Credito Infinite 10",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -82,7 +82,7 @@ export const mockProducts = [
 
   {
     logo: "https://www.visa.com.ec/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-signature-400x225.jpg",
-    name: "Tarjetas de Credito Signature",
+    name: "Tarjetas de Credito Signature 11",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -90,7 +90,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Cla%CC%81sica_%28Azul%29_180910.jpg/20946586-edcc-7b33-dc17-8d2deb432aab?t=1558124363833",
-    name: "Tarjetas de Credito Clasica",
+    name: "Tarjetas de Credito Clasica 12",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -98,7 +98,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Gold_180910.jpg/6549183f-6e0c-141e-c298-3e08734cdd95?t=1558124363880",
-    name: "Tarjetas de Credito Gold",
+    name: "Tarjetas de Credito Gold 13",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -106,7 +106,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Platino-banco-pichincha.png/39dcbbaf-34ff-288f-c736-2316b05cab92?t=1634856749760",
-    name: "Tarjetas de Credito Platino",
+    name: "Tarjetas de Credito Platino 14",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -114,7 +114,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Infinite-banco-pichincha.png/2927556c-a16f-b2fe-def4-10c8eebb6eca?t=1634857084377",
-    name: "Tarjetas de Credito Infinite",
+    name: "Tarjetas de Credito Infinite 15",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -122,7 +122,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.visa.com.ec/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-signature-400x225.jpg",
-    name: "Tarjetas de Credito Signature",
+    name: "Tarjetas de Credito Signature 16",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -130,7 +130,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Cla%CC%81sica_%28Azul%29_180910.jpg/20946586-edcc-7b33-dc17-8d2deb432aab?t=1558124363833",
-    name: "Tarjetas de Credito Clasica",
+    name: "Tarjetas de Credito Clasica 17",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -138,7 +138,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Gold_180910.jpg/6549183f-6e0c-141e-c298-3e08734cdd95?t=1558124363880",
-    name: "Tarjetas de Credito Gold",
+    name: "Tarjetas de Credito Gold 18",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -146,7 +146,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Platino-banco-pichincha.png/39dcbbaf-34ff-288f-c736-2316b05cab92?t=1634856749760",
-    name: "Tarjetas de Credito Platino",
+    name: "Tarjetas de Credito Platino 19",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -154,7 +154,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Infinite-banco-pichincha.png/2927556c-a16f-b2fe-def4-10c8eebb6eca?t=1634857084377",
-    name: "Tarjetas de Credito Infinite",
+    name: "Tarjetas de Credito Infinite 20",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -163,7 +163,7 @@ export const mockProducts = [
 
   {
     logo: "https://www.visa.com.ec/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-signature-400x225.jpg",
-    name: "Tarjetas de Credito Signature",
+    name: "Tarjetas de Credito Signature 21",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -171,7 +171,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Cla%CC%81sica_%28Azul%29_180910.jpg/20946586-edcc-7b33-dc17-8d2deb432aab?t=1558124363833",
-    name: "Tarjetas de Credito Clasica",
+    name: "Tarjetas de Credito Clasica 22",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -179,7 +179,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Gold_180910.jpg/6549183f-6e0c-141e-c298-3e08734cdd95?t=1558124363880",
-    name: "Tarjetas de Credito Gold",
+    name: "Tarjetas de Credito Gold 23",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -187,7 +187,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Platino-banco-pichincha.png/39dcbbaf-34ff-288f-c736-2316b05cab92?t=1634856749760",
-    name: "Tarjetas de Credito Platino",
+    name: "Tarjetas de Credito Platino 24",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -195,7 +195,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Infinite-banco-pichincha.png/2927556c-a16f-b2fe-def4-10c8eebb6eca?t=1634857084377",
-    name: "Tarjetas de Credito Infinite",
+    name: "Tarjetas de Credito Infinite 25",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -203,7 +203,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.visa.com.ec/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-signature-400x225.jpg",
-    name: "Tarjetas de Credito Signature",
+    name: "Tarjetas de Credito Signature 26",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -211,7 +211,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Cla%CC%81sica_%28Azul%29_180910.jpg/20946586-edcc-7b33-dc17-8d2deb432aab?t=1558124363833",
-    name: "Tarjetas de Credito Clasica",
+    name: "Tarjetas de Credito Clasica 27",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -219,7 +219,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Gold_180910.jpg/6549183f-6e0c-141e-c298-3e08734cdd95?t=1558124363880",
-    name: "Tarjetas de Credito Gold",
+    name: "Tarjetas de Credito Gold 28",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -227,7 +227,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Platino-banco-pichincha.png/39dcbbaf-34ff-288f-c736-2316b05cab92?t=1634856749760",
-    name: "Tarjetas de Credito Platino",
+    name: "Tarjetas de Credito Platino 29",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -235,7 +235,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Infinite-banco-pichincha.png/2927556c-a16f-b2fe-def4-10c8eebb6eca?t=1634857084377",
-    name: "Tarjetas de Credito Infinite",
+    name: "Tarjetas de Credito Infinite 30",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -244,7 +244,7 @@ export const mockProducts = [
 
   {
     logo: "https://www.visa.com.ec/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-signature-400x225.jpg",
-    name: "Tarjetas de Credito Signature",
+    name: "Tarjetas de Credito Signature 31",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -252,7 +252,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Cla%CC%81sica_%28Azul%29_180910.jpg/20946586-edcc-7b33-dc17-8d2deb432aab?t=1558124363833",
-    name: "Tarjetas de Credito Clasica",
+    name: "Tarjetas de Credito Clasica 32",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -260,7 +260,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Gold_180910.jpg/6549183f-6e0c-141e-c298-3e08734cdd95?t=1558124363880",
-    name: "Tarjetas de Credito Gold",
+    name: "Tarjetas de Credito Gold 33",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -268,7 +268,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Platino-banco-pichincha.png/39dcbbaf-34ff-288f-c736-2316b05cab92?t=1634856749760",
-    name: "Tarjetas de Credito Platino",
+    name: "Tarjetas de Credito Platino 34",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -276,7 +276,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Infinite-banco-pichincha.png/2927556c-a16f-b2fe-def4-10c8eebb6eca?t=1634857084377",
-    name: "Tarjetas de Credito Infinite",
+    name: "Tarjetas de Credito Infinite 35",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -284,7 +284,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.visa.com.ec/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-signature-400x225.jpg",
-    name: "Tarjetas de Credito Signature",
+    name: "Tarjetas de Credito Signature 36",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -292,7 +292,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Cla%CC%81sica_%28Azul%29_180910.jpg/20946586-edcc-7b33-dc17-8d2deb432aab?t=1558124363833",
-    name: "Tarjetas de Credito Clasica",
+    name: "Tarjetas de Credito Clasica 37",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -300,7 +300,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/AF_Disen%CC%83o_PlasticoTarjetadeCredito_Gold_180910.jpg/6549183f-6e0c-141e-c298-3e08734cdd95?t=1558124363880",
-    name: "Tarjetas de Credito Gold",
+    name: "Tarjetas de Credito Gold 38",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -308,7 +308,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Platino-banco-pichincha.png/39dcbbaf-34ff-288f-c736-2316b05cab92?t=1634856749760",
-    name: "Tarjetas de Credito Platino",
+    name: "Tarjetas de Credito Platino 39",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),
@@ -316,7 +316,7 @@ export const mockProducts = [
   },
   {
     logo: "https://www.bancopichincha.com.co/documents/158147/441820/TC-Infinite-banco-pichincha.png/2927556c-a16f-b2fe-def4-10c8eebb6eca?t=1634857084377",
-    name: "Tarjetas de Credito Infinite",
+    name: "Tarjetas de Credito Infinite 40",
     description: "Tarjeta de consumo bajo la modalidad de credito",
     date_release: new Date("2023-02-01"),
     date_revision: new Date("2024-02-01"),

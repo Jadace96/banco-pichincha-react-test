@@ -5,6 +5,9 @@ import { useForm } from "react-hook-form";
 // compoenents
 import { Button } from "components";
 
+// utils
+import { formatDate } from "utils";
+
 // styles
 import styles from "./ProductForm.module.css";
 
@@ -18,24 +21,27 @@ type ProductFormData = {
   date_revision: string;
 };
 
-export const ProductForm = () => {
+type TProps = {
+  initialValues?: ProductFormData;
+};
+
+export const ProductForm = ({ initialValues }: TProps) => {
   const {
     setValue,
     register,
     handleSubmit,
     formState: { errors, isDirty },
-  } = useForm<ProductFormData>({ mode: "onChange" });
+  } = useForm<ProductFormData>({ mode: "onChange", defaultValues: { ...initialValues } });
 
   const onSubmit = (data: ProductFormData) => {
     console.log(data);
   };
 
   const onReleaseDateChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    console.log({ target });
     const nextYear = new Date(target.value);
     nextYear.setFullYear(nextYear.getFullYear() + 1);
 
-    const newDateRevision = target.value ? nextYear?.toISOString()?.split("T")[0] : "";
+    const newDateRevision = target.value ? formatDate(nextYear) : "";
 
     setValue("date_revision", newDateRevision);
   };
@@ -58,8 +64,7 @@ export const ProductForm = () => {
             maxLength: {
               value: 10,
               message: "Máximo 10 caracteres!",
-            },
-            pattern: /^[A-Za-z0-9]+$/,
+            }
           })}
           className={`${styles.formControl} ${errors.id ? styles.errorInput : ""}`}
         />
@@ -135,8 +140,8 @@ export const ProductForm = () => {
           {...register("date_release", {
             required: "Este campo es requerido!",
             validate: (value) => {
-              const today = new Date().toISOString().substring(0, 10);
-              const selectedDate = new Date(value).toISOString().substring(0, 10);
+              const today = formatDate();
+              const selectedDate = formatDate(new Date(value));
 
               return selectedDate < today ? "La fecha no puede ser inferior a la de hoy!" : true;
             },
