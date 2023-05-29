@@ -17,29 +17,32 @@ import { PATHS } from "consts/paths.const";
 import styles from "./Products.module.css";
 
 const columnsData = [
-	"Logo",
-	"Nombre del producto",
-	<Tooltip label="Descripción" />,
-	<Tooltip label="Fecha de liberación" />,
-	<Tooltip label="Fecha de reestructuración" />,
-	"",
+  "Logo",
+  "Nombre del producto",
+  <Tooltip label="Descripción" />,
+  <Tooltip label="Fecha de liberación" />,
+  <Tooltip label="Fecha de reestructuración" />,
+  "",
 ];
 
 export default function ProductsPage() {
-	const navigate = useNavigate();
-	const { currentPageData, ...rest } = useProductsTable();
+  const navigate = useNavigate();
+  const { currentPageData, ...rest } = useProductsTable();
 
-	return (
-		<div className={styles.pageContainer}>
-			<div className={styles.headerContainer}>
-				<Searcher />
-				<Button onClick={() => navigate(PATHS.ADD_PRODUCT)}> Agregar </Button>
-			</div>
-			<Table
-				{...rest}
-				colums={columnsData}
-				rows={mapProductsToTableRows(currentPageData)}
-			/>
-		</div>
-	);
+  return (
+    <div className={styles.pageContainer}>
+      <div className={styles.headerContainer}>
+        <Searcher />
+        <Button onClick={() => navigate(PATHS.ADD_PRODUCT)}> Agregar </Button>
+      </div>
+      <Table
+        {...rest}
+        colums={columnsData}
+        rows={mapProductsToTableRows({
+          products: currentPageData,
+          threeDotsMenuProps: { onClickEdit: () => navigate(PATHS.EDIT_PRODUCT), onClickDelete: () => {} },
+        })}
+      />{" "}
+    </div>
+  );
 }

@@ -1,9 +1,25 @@
 .addEditProductContainer {
-	max-width: 780px;
+  max-width: 780px;
+}
+
+.pageTitle {
+  width: 100%;
+  margin-bottom: 0;
+  text-align: center;
+  padding-block: 15px 30px;
+  border-bottom: 1px solid;
+  background-color: #ffffff;
+}
+
+.goBackButton {
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: transparent;
 }
 
 @media (min-width: 720px) {
-	.addEditProductContainer {
-		margin: 70px auto 0;
-	}
+  .addEditProductContainer {
+    margin: 70px auto 0;
+  }
 }
