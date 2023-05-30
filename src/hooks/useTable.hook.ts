@@ -21,7 +21,7 @@ export const useTable = <TDataItem>(data: TDataItem[]) => {
 
   const totalPages = useMemo(
     () => getTotalPages<TDataItem>(data, rowsPerPage),
-    [data, rowsPerPage, currentPage]
+    [data, rowsPerPage]
   );
 
   const onRowsPerPagesChange = (perPage: number) => {
@@ -35,6 +35,7 @@ export const useTable = <TDataItem>(data: TDataItem[]) => {
     rowsPerPage,
     currentPageData,
     setCurrentPage,
+    totalProducts: data.length,
     setRowsPerPage: onRowsPerPagesChange,
   };
 };

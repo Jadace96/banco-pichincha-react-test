@@ -2,15 +2,15 @@
 import { Logo, ThreeDotsMenu } from "components";
 
 // utils
-import { capitalizeFirstLetters, formatDate } from "utils";
+import { capitalizeFirstLetters } from "utils";
 
 // types
 import { TProduct } from "types/product.types";
 
 type TProps = {
   products: TProduct[];
+  onClickDeleteProduct: (id: string) => void;
   onClickEditProduct: (product: TProduct) => void;
-  onClickDeleteProduct: (product: TProduct) => void;
 };
 
 export const mapProductsToTableRows = ({
@@ -27,7 +27,7 @@ export const mapProductsToTableRows = ({
     threeDotsMenu: (
       <ThreeDotsMenu
         onClickEdit={() => onClickEditProduct(product)}
-        onClickDelete={() => onClickDeleteProduct(product)}
+        onClickDelete={() => onClickDeleteProduct(product.id)}
       />
     ),
   }));

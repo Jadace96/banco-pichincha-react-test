@@ -18,7 +18,7 @@ import { TProduct } from "types";
 
 // styles
 import styles from "./Products.module.css";
-import { mockProducts } from "mocks/mockTableData";
+import { useEffect } from "react";
 
 const columnsData = [
   "Logo",
@@ -31,9 +31,12 @@ const columnsData = [
 
 export default function ProductsPage() {
   const navigate = useNavigate();
-  const { products, isFetchingProducts, createProductMutation } = useProduct();
-  // const { currentPageData, ...rest } = useTable<TProduct>(products);
+  const { products, fetchProducts, isFetchingProducts, deleteProductMutation } = useProduct();
   const { currentPageData, ...rest } = useTable<TProduct>(products);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
     <div className={styles.pageContainer}>
@@ -55,7 +58,7 @@ export default function ProductsPage() {
                   productData: productToEdit,
                 },
               }),
-            onClickDeleteProduct: () => {},
+            onClickDeleteProduct: deleteProductMutation.mutate,
           })}
         />
       )}

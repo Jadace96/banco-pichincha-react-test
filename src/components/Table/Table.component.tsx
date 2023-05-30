@@ -11,6 +11,7 @@ import styles from "./Table.module.css";
 import { TObjectKeyString } from "types";
 
 type TPops = {
+  totalProducts: number;
   rows: TObjectKeyString[];
   initialRowsPerPage?: number;
   colums?: ReactNode[];
@@ -27,6 +28,7 @@ export const Table = ({
   totalPages,
   currentPage,
   rowsPerPage,
+  totalProducts,
   setRowsPerPage,
   setCurrentPage,
 }: TPops) => {
@@ -57,8 +59,8 @@ export const Table = ({
         </table>
       </div>
       <TableFooter
-        results={rows?.length}
         totalPages={totalPages}
+        results={totalProducts}
         currentPage={currentPage}
         rowsPerPage={rowsPerPage}
         setRowsPerPage={setRowsPerPage}

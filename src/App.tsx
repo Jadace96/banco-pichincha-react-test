@@ -11,13 +11,13 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading App...</div>}>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Suspense fallback={<div>Loading App...</div>}>
           <Routes />
-        </BrowserRouter>
-      </QueryClientProvider>
-    </Suspense>
+        </Suspense>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

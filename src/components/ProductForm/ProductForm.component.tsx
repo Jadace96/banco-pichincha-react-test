@@ -12,6 +12,7 @@ import { formatDate } from "utils";
 import styles from "./ProductForm.module.css";
 
 // types
+
 type ProductFormData = {
   id: string;
   name: string;
@@ -22,11 +23,12 @@ type ProductFormData = {
 };
 
 type TProps = {
-  onSubmitForm: (formValues: ProductFormData) => void;
+  shouldDisableId: boolean;
   initialValues?: ProductFormData;
+  onSubmitForm: (formValues: ProductFormData) => void;
 };
 
-export const ProductForm = ({ initialValues, onSubmitForm }: TProps) => {
+export const ProductForm = ({ initialValues, onSubmitForm, shouldDisableId = false }: TProps) => {
   const {
     setValue,
     register,
@@ -47,11 +49,12 @@ export const ProductForm = ({ initialValues, onSubmitForm }: TProps) => {
 
   return (
     <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
-      <div className={styles.formGroup}>
+      <div className={`${styles.formGroup} ${shouldDisableId ? styles.disabled : ""}`}>
         <label className={styles.formFieldLabel} htmlFor="id">
           ID
         </label>
         <input
+          disabled={shouldDisableId}
           type="text"
           id="id"
           {...register("id", {

@@ -21,7 +21,7 @@ export default function AddEditProduct() {
   const navigate = useNavigate();
   const { state } = useLocation();
 
-  const { createProductMutation } = useProduct();
+  const { createProductMutation, updateProductMutation } = useProduct();
 
   const isEditPage = location.pathname === PATHS.EDIT_PRODUCT;
 
@@ -46,7 +46,10 @@ export default function AddEditProduct() {
         {isEditPage ? "Formulario de Edicion" : "Formulario de Registro"}
       </h1>
       <ProductForm
-        onSubmitForm={(data: any) => createProductMutation.mutate(data)}
+        shouldDisableId={isEditPage}
+        onSubmitForm={(data: any) =>
+          isEditPage ? updateProductMutation.mutate(data) : createProductMutation.mutate(data)
+        }
         initialValues={productFormInitialValues}
       />
     </div>
