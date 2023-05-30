@@ -1,5 +1,9 @@
 // vendors
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+// utils
+import { filterProducts } from "utils";
 
 // components
 import { Button, Searcher, Table, Tooltip } from "components";
@@ -18,7 +22,6 @@ import { TProduct } from "types";
 
 // styles
 import styles from "./Products.module.css";
-import { useEffect } from "react";
 
 const columnsData = [
   "Logo",
@@ -34,14 +37,22 @@ export default function ProductsPage() {
   const { products, fetchProducts, isFetchingProducts, deleteProductMutation } = useProduct();
   const { currentPageData, ...rest } = useTable<TProduct>(products);
 
+  const [filteredProducts, setFilteredProducts] = useState<TProduct[]>([]);
+
   useEffect(() => {
     fetchProducts();
   }, []);
 
+  const onSearcherChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const filteredProducts = filterProducts({ products, value: target.value });
+
+    setFilteredProducts(filteredProducts);
+  };
+
   return (
     <div className={styles.pageContainer}>
       <div className={styles.headerContainer}>
-        <Searcher />
+        <Searcher onChange={onSearcherChange} />
         <Button onClick={() => navigate(PATHS.ADD_PRODUCT)}> Agregar </Button>
       </div>
       {isFetchingProducts ? (
@@ -51,7 +62,7 @@ export default function ProductsPage() {
           {...rest}
           colums={columnsData}
           rows={mapProductsToTableRows({
-            products: currentPageData,
+            products: filteredProducts?.length > 0 ? filteredProducts : currentPageData,
             onClickEditProduct: (productToEdit) =>
               navigate(PATHS.EDIT_PRODUCT, {
                 state: {

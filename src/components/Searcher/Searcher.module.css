@@ -3,6 +3,7 @@
   height: 30px;
   outline: none;
   padding: 0 7px;
+  min-width: 100px;
   max-width: 230px;
   border-radius: 10px;
   border: 2px solid var(--blue-haze-color);
