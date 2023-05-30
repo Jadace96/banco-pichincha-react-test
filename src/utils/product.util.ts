@@ -13,5 +13,6 @@ export const filterProducts = ({
   filterBy = "name",
 }: TFilterProducts): TProduct[] => {
   const pattern = new RegExp(value, "i");
+
   return products.filter((product) => pattern.test(product[filterBy]));
 };
