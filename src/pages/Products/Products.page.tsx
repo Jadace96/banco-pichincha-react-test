@@ -35,18 +35,21 @@ const columnsData = [
 export default function ProductsPage() {
   const navigate = useNavigate();
   const { products, fetchProducts, isFetchingProducts, deleteProductMutation } = useProduct();
-  const { currentPageData, ...rest } = useTable<TProduct>(products);
-
   const [filteredProducts, setFilteredProducts] = useState<TProduct[]>([]);
+
+  const { currentPageData, ...rest } = useTable<TProduct>(
+    filteredProducts?.length > 0 ? filteredProducts : products
+  );
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
   const onSearcherChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    const filteredProducts = filterProducts({ products, value: target.value });
+    const data = [...filterProducts({ products, value: target.value })];
 
-    setFilteredProducts(filteredProducts);
+    rest.setCurrentPage(1);
+    setFilteredProducts(data);
   };
 
   return (
@@ -62,7 +65,7 @@ export default function ProductsPage() {
           {...rest}
           colums={columnsData}
           rows={mapProductsToTableRows({
-            products: filteredProducts?.length > 0 ? filteredProducts : currentPageData,
+            products: currentPageData,
             onClickEditProduct: (productToEdit) =>
               navigate(PATHS.EDIT_PRODUCT, {
                 state: {

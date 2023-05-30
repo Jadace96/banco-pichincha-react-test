@@ -10,7 +10,7 @@ type TFilterProducts = {
 export const filterProducts = ({
   value,
   products = [],
-  filterBy = "id",
+  filterBy = "name",
 }: TFilterProducts): TProduct[] => {
   const pattern = new RegExp(value, "i");
   return products.filter((product) => pattern.test(product[filterBy]));
