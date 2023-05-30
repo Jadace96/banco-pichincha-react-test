@@ -14,7 +14,7 @@ type TPops = {
   totalProducts: number;
   rows: TObjectKeyString[];
   initialRowsPerPage?: number;
-  colums?: ReactNode[];
+  columns?: ReactNode[];
   totalPages: number;
   currentPage: number;
   rowsPerPage: number;
@@ -24,7 +24,7 @@ type TPops = {
 
 export const Table = ({
   rows = [],
-  colums = [],
+  columns = [],
   totalPages,
   currentPage,
   rowsPerPage,
@@ -38,7 +38,7 @@ export const Table = ({
         <table className={styles.table}>
           <thead className={styles.tableRowHeader}>
             <tr>
-              {colums.map((element) => (
+              {columns.map((element) => (
                 <th key={Math.random()} className={styles.tableHeader}>
                   {element}
                 </th>

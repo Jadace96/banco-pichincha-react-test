@@ -37,7 +37,7 @@ export const TableFooter = ({
           className={`${styles.button} ${currentPage === 1 && styles.buttonDisabled}`}
           onClick={onClickPreviousPage}
         >
-          <img src="https://www.svgrepo.com/show/67833/left-arrow.svg" />
+          <img alt="previous page button" src="https://www.svgrepo.com/show/67833/left-arrow.svg" />
         </button>
 
         {currentPage}
@@ -47,7 +47,7 @@ export const TableFooter = ({
           onClick={onClickNextPage}
           disabled={currentPage === totalPages}
         >
-          <img src="https://www.svgrepo.com/show/95912/right-arrow.svg" />
+          <img alt="next page button" src="https://www.svgrepo.com/show/95912/right-arrow.svg" />
         </button>
       </div>
 

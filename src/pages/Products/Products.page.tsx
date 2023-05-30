@@ -45,8 +45,8 @@ export default function ProductsPage() {
     fetchProducts();
   }, []);
 
-  const onSearcherChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    const data = [...filterProducts({ products, value: target.value })];
+  const onSearcherChange = (value = "") => {
+    const data = [...filterProducts({ products, value })];
 
     rest.setCurrentPage(1);
     setFilteredProducts(data);
@@ -55,7 +55,7 @@ export default function ProductsPage() {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.headerContainer}>
-        <Searcher onChange={onSearcherChange} />
+        <Searcher onChangeValue={onSearcherChange} placeholder="Nombre del producto..." />
         <Button onClick={() => navigate(PATHS.ADD_PRODUCT)}> Agregar </Button>
       </div>
       {isFetchingProducts ? (
@@ -63,7 +63,7 @@ export default function ProductsPage() {
       ) : (
         <Table
           {...rest}
-          colums={columnsData}
+          columns={columnsData}
           rows={mapProductsToTableRows({
             products: currentPageData,
             onClickEditProduct: (productToEdit) =>

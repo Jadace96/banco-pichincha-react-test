@@ -23,9 +23,9 @@ export const ThreeDotsMenu = ({ onClickEdit, onClickDelete }: TProps) => {
         className={`${styles.dotsIcon} ${showMenu ? styles.active : ""}`}
         onClick={() => setShowMenu(!showMenu)}
       >
-        <span className={styles.dotIcon}></span>
-        <span className={styles.dotIcon}></span>
-        <span className={styles.dotIcon}></span>
+        <span className={styles.dotIcon} />
+        <span className={styles.dotIcon} />
+        <span className={styles.dotIcon} />
         {showMenu && (
           <div className={styles.optionsMenu}>
             <button onClick={onClickEdit} className={styles.option}>

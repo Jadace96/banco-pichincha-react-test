@@ -2,6 +2,7 @@
 	"name": "banco-pichincha-react-test",
 	"version": "0.1.0",
 	"private": true,
+  "repository": "https://github.com/Jadace96/banco-pichincha-react-test",
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
